@@ -1,67 +1,96 @@
-@keyframes sliding {
-  from {
-    color: green;
-    margin-left: 8rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes sliding-image {
+  0% {
+    transform: translateX(10rem);
   }
 
-  to {
-    color: purple;
-    margin-right: 16rem;
+  50% {
+    transform: translateX(-20rem);
+  }
+
+  100% {
+    transform: translateX(10rem);
   }
 }
 
-.background {
-  background-color: #0e2f3d;
-}
-
-.penguinz0 {
-  text-align: center;
-  font-size: 2.3rem;
-  animation-name: sliding;
-  animation-duration: 1s;
-  animation-delay: 2s;
-  animation-timing-function: linear;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-
-h1 {
-  text-shadow: 1px 1px 5px white;
-}
-
-.penguinz0:hover {
-  transform: scale(1.3);
-}
-
-img {
-  border: solid 1px black;
-}
-
-p {
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  font-size: 1.3rem;
-  padding-top: 1.3rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-li {
-  font-size: 1.3rem;
-  color: white;
-}
-
-a {
-  color: white;
-}
-
-li:hover {
-  text-shadow: 1px 1px 5px black;
-  transform: scale(1.005);
-}
-
-.container {
+body {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 5rem;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  animation: sliding-image 2s linear 0.2s infinite;
+}
+
+.image-container > img {
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 100%;
+  height: auto;
+
+  transition: transform 0.1s ease-in;
+}
+
+.image-container > img:hover {
+  transform: rotate(180deg);
+}
+
+.image-container > h1 {
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description > p {
+  font-size: 1.1rem;
+}
+
+.video-links-container {
+  display: flex;
+  align-self: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.video-links-container > h2 {
+  font-size: 2rem;
+}
+
+.video-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  list-style: square;
+}
+
+.video-links > li > a {
+  text-decoration: none;
+}
+
+.video-links > li > a:hover {
+  text-decoration: underline;
 }
